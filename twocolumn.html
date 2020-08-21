@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Layout</title>
+    <style>
+        body{
+            background-color: lightgoldenrodyellow;
+        }
+        #container{
+            width:800px;
+            margin: 0px auto;
+            background-color: white;
+            padding: 20px;
+        }
+        #header{
+            text-align: center;
+            border-bottom: solid 1px black;
+        }
+        #header ul{
+            list-style: none;
+            padding: 0;
+        }
+        #header ul li{
+            display: inline;
+            margin-right: 9px;
+            margin-left: 9px;
+        }
+        #content{
+            border-bottom: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Bio</a></li>
+                    <li><a href="#">Galleries</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <h1>Main Content</h1>
+        </div>
+        <div id="side-content">
+            <h1>Side Content</h1>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <h3>Footer</h3>
+</div>
+</body>
+</html>
