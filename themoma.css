@@ -1,0 +1,28 @@
+#container{
+    width:1280px;
+    margin:0px auto;
+    margin-top: 20px;
+}
+
+#header{
+    display: flex;
+    width: 100px;
+
+}
+
+#left-header, #right-header{
+    flex-grow:1;
+}
+
+#right-header div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#right-header div{
+    margin-left:30px;
+}
+
+#right-header input{
+    border:none;
+    border-bottom:solid 1px black;
