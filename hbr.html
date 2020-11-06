@@ -5,95 +5,329 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        #body{
             font-family: Arial, Helvetica, sans-serif;
-            margin:0;
+            margin: 0;
             padding: 0;
+            font-size: 90%;
+            color: #545454;
+            line-height: 2em;
         }
         a:link{
-            color:black;
+            color: black;
             text-decoration: none;
         }
         a:hover{
             color: #999999;
             text-decoration: underline;
         }
+
+        a:visited{
+            color: black;
+        }
+
         #header{
-            display: flex;
             padding: 20px;
+            display: flex;
             align-items: center;
         }
         #search, #cart{
             flex-grow: 1;
         }
         #logo{
-            flex-grow:3;
+            flex-grow: 3;
             text-align: center;
         }
-        #cart ul{
-            list-style: none;
-            margin:0;
-            padding: 0;
-        }
+
         #cart{
             text-align: right;
         }
+
         #cart li{
-            display: inline;
-            margin-left: 40px;
-        }
-        #navigation{
-            border-top:solid 1px #999999;
-            border-bottom:solid 1px #999999;
-            text-align: center;
-        }
-        #navigation ul{
             list-style: none;
+            display: inline;
+            margin: 0;
             padding: 0;
         }
+
+        #cart img{
+            padding-right: 50px;
+        }
+
+        #navigation{
+            border-top: solid lightgray 1px;
+            border-bottom: solid lightgray 1px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .navigation-text{
+        padding: 10px 0px;}
+
+        .navigation-text a:link{
+        color: black;
+        font-size: 17px;
+        font-weight: bold;
+        }
+
         #navigation li{
             display: inline;
-            margin: 0px 12px;
+            margin: 0px 12px
         }
+
         #content{
-            padding-top: 60px;
-            width:1066px;
+            width: 1066px;
             margin: 0px auto;
+            padding-top: 60px;
         }
+
         #breadcrumb{
             font-size: 0.8em;
+            margin-bottom: 20px;
         }
+
         #breadcrumb ul{
             list-style: none;
             padding: 0;
         }
+
         #breadcrumb li{
             display: inline;
             margin-right: 8px;
         }
+
         #article{
             display: flex;
-            align-items:flex-start;
+            align-items: flex-start;
         }
+
         #article-info{
-            flex-grow: 2;
+            width: 65%;
+            margin-right: 20px;
         }
+
         #article-price{
-            flex-grow: 1;
+            width: 30%;
         }
+
+        #article-price h3{
+            margin-top: 0;
+        }
+
+        #article-img{
+            width: 40%;
+            background-color: #e6e6e6;
+            padding: 60px 5px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
         #article-header{
             display: flex;
+            align-items: flex-start;
+            margin-bottom: 60px;
         }
-        #article-img{
-            width:50%;
-            background-color: #999999;
-        }
+
         #article-img img{
-            max-width:80%;
+            max-width: 80%;
         }
-        #article-header{
-            width:50%;
+
+        #article-header-title{
+            width: 60%;
         }
+
+        #article-header-title h3{
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .bold-label{
+            font-weight: 600;
+        }
+
+        #description{
+            line-height: 20px;
+        }
+
+        #download{
+            border-top: solid 1px #e6e6e6;
+            border-bottom: solid 1px #e6e6e6;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        #order-form input{
+            width: 40px;
+        }
+
+        #order-form span{
+            font-size: 80%;
+        }
+
+        #order-form ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #order-form li{
+            display: inline;
+        }
+
+        #order-form button{
+            background: darkred;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+        }
+
+        #related-products{
+            margin-top: 40px;
+        }
+
+        #related-products-header{
+            border-bottom: solid 1px #e6e6e6;
+            margin-bottom: 20px;
+        }
+
+        #related-products-header h3{
+            padding: 0;
+            margin: 0;
+        }
+
+        #related-products-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .card{
+            width: 32%;
+            border: solid 1px #e6e6e6;
+        }
+
+        .card-header{
+            background-color: #e6e6e6;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .card-header img{
+            max-height: 120px;
+        }
+
+        .card-body{
+            padding: 10px 20px;
+        }
+
+        .card-body p{
+            font-size: 90%;
+            margin: 0;
+        }
+
+        .card-body h4{
+            margin: 0;
+        }
+
+        .card-footer{
+            padding: 20px 10px;
+            display: flex;
+        }
+        
+        .card-footer div{
+            width: 50%;
+        }
+
+        .card-footer :nth-last-child(2){
+            text-align: right;
+        }
+
+        a:link.blue, a:visited.blue{
+            color: rgb 148, 166, 199;
+        }
+
+        #spanner{
+            display: flex;
+            justify-content: space-between;
+            margin-right: -10px;
+        }
+
+        #spanner a:link{
+            color: blue;
+        }
+        #spanner a:visited{
+            color: blue;
+        }
+        #footer-header{
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #footercontainer{
+            padding-top: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        #footer-content ul{
+            list-style: none;
+            line-height: 25px;
+        }
+
+        #footer-content{
+            margin-top: 75px;
+            margin-left: 0px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #footer-content a:link{
+            color: black;
+        }
+
+        #footer-content a:visited{
+            color: black;
+        }
+
+        #footer-content a:hover{
+            text-decoration: none;
+            color: gray
+        }
+
+        .footer-list{
+            border-left: solid lightgray 1px;
+            width: 200px;
+        }
+
+        #footer-copyright{
+            display: flex;
+        }
+
+        #copyright-header a:link{
+            color: #999999;
+            text-decoration: none;
+        }
+
+        #copyright-header{
+            width: 150px;
+        }
+
+        #copyright-content{
+            color: #999999;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        #copyright-content a:visited{
+            color: #999999;
+            text-decoration: none;
+        }
+
+        #copyright-content a:hover{
+            color: black;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -101,22 +335,23 @@
         <div id="search">
             <form>
                 <div>
-                    <input type="text" placeholder="Search HBR Product">
+                    <input type="text" placeholder="Search HBR product">
                     <button type="submit">S</button>
                 </div>
             </form>
         </div>
         <div id="logo">
-                <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/original/nav-hbr-logo_1570720324__61965.original.png" alt="" width="60">
-                <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/38d20a80-df8f-0138-a9b8-0242ac110007/e/33777490-bd12-0137-07b1-0242ac110005/img/custom/nav-store-logo.png" alt="" width="140">
+            <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/original/nav-hbr-logo_1570720324__61965.original.png" width="70" alt="">
+            <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/38d20a80-df8f-0138-a9b8-0242ac110007/e/33777490-bd12-0137-07b1-0242ac110005/img/custom/nav-store-logo.png" width="120" alt="">
         </div>
         <div id="cart">
             <ul>
-                <li><img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/38d20a80-df8f-0138-a9b8-0242ac110007/e/33777490-bd12-0137-07b1-0242ac110005/img/custom/img-cart-0620.png"  alt="" width="28"></li>
+                <li><img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/38d20a80-df8f-0138-a9b8-0242ac110007/e/33777490-bd12-0137-07b1-0242ac110005/img/custom/img-cart-0620.png" width="20" alt=""></li>
                 <li><a href="#">Sign In</a></li>
             </ul>
+
         </div>
-    </div><!-- the end of the header -->
+    </div><!----the end of the header-->
     <div id="navigation">
         <ul>
             <li><a href="#">Collections</a></li>
@@ -124,7 +359,7 @@
             <li><a href="#">Tools</a></li>
             <li><a href="#">Case Studies</a></li>
             <li><a href="#">Articles</a></li>
-            <li><a href="#">Magazine Issues</a></li>
+            <li><a href="#">Magazines</a></li>
             <li><a href="#">Search by Subject</a></li>
             <li><a href="#">HBR Home</a></li>
         </ul>
@@ -135,29 +370,231 @@
                 <li><a href="#">Home</a> > </li>
                 <li><a href="#">Articles</a> > </li>
                 <li><a href="#">HBR Classic Bestseller</a> > </li>
-                <li><a href="#">Leadership & Managing People</a> </li>
+                <li><a href="#">Leadership & Managing People</a></li>
             </ul>
         </div>
-        <div id="article">
-            <div id="article-info">
-                <div id="article-header">
-                    <div id="article-img">
-                        <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/500x500/attribute_rule_images/63333_source_1565536069.jpg?imbypass=on" alt="">
-                    </div>
-                    <div id="article-header">
-                        <h3>Leadership That Gets Results (HBR Bestseller)</h3>
-                    </div>
+    <div id="article">
+        <div id="article-info">
+            <div id="article-header">
+                <div id="article-img">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/500x500/attribute_rule_images/63333_source_1565536069.jpg?imbypass=on" alt="">
                 </div>
-                <div id="description">
-
+                <div id="article-header-title">
+                    <h3>Leadership That Gets Results (HBR Bestseller)</h3>
                 </div>
             </div>
+            <div id="description">
+                <h4>Product Description</h4>
+                <p><span class="bold-label">Publication Date: March 01, 2000</span></p>
+                <p>A leader's singular job is to get results. But even with all the leadership training programs and "expert" advice available, effective leadership still eludes many people and organizations. One reason, says Daniel Goleman, is that such experts offer advice based on inference, experience, and instinct, not on quantitative data. Now, drawing on research of more than 3,000 executives, Goleman explores which precise leadership behaviors yield positive results. He outlines six distinct leadership styles, each one springing from different components of emotional intelligence. Each style has a distinct effect on the working atmosphere of a company, division, or team, and, in turn, on its financial performance. The styles, by name and brief description alone, will resonate with anyone who leads, is led, or, as is the case with most of us, does both. Coercive leaders demand immediate compliance. Authoritative leaders mobilize people toward a vision. Affiliative leaders create emotional bonds and harmony. Democratic leaders build consensus through participation. Pacesetting leaders expect excellence and self-direction. And coaching leaders develop people for the future. The research indicates that leaders who get the best results don't rely on just one leadership style; they use most of the styles in any given week. Goleman details the types of business situations each style is best suited for, and he explains how leaders who lack one or more of these styles can expand their repertories. He maintains that with practice leaders can switch among leadership styles to produce powerful results, thus turning the art of leadership into a science.</p>
+                <p><span class="bold-label">Product #: R00204-PDF-ENG</span></p>
+                <p><span class="bold-label">Pages: 13</span></p>
+                <p><span class="bold-label">Replated Topics:</span> Power and Influence, Management styles</p>
+            </div>
+        </div>
+        <div id="article-price">
             <div id="article-price">
                 <div>
                     <h3>$8.95</h3>
+                    <div id="download">
+                        <p>Format</p>
+                        <a href="#">PDF</a> <a href="#">Hardcover / Hardcopy (B/W)</a>
+                        <p>Language</p>
+                        <a href="#">English</a> <a href="#">Spanish (B/W)</a>
+                    </div>
+                    <div id="order">
+                        <label for="">Quantity</label>
+                        <div id="order-form">
+                            <ul>
+                                <li><input type="text"></li>
+                                <li>
+                                    <li><span>This is a copyrighted PDF. Add copies before sharing with your team.</span></li>
+                                </li>
+                            </ul>
+                            <button type="submit">Add to Cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--endofarticle-->
+    </div>
+    <div id="related-products">
+        <div id="related-products-header">
+            <h3>Related Products</h3>
+        </div>
+        <div id="related-products-container">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/80w/products/16441/154478/10102_500__24242.1599812088.png?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>PRESS BOOK</p>
+                    <h4>Leadership That Gets Result (Harvard Business Review Classics)</h4>
+                    <p>By Daniel Goleman</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$9.99</span><span><a href="#"><span>View Details</a></span></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/320w/products/46193/137358/SEPT15_03_562244701_t-383x215__70599.1576055858.jpg?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>HBR Article</p>
+                    <h4>The Work of Leadership (HBR Bestseller)</h4>
+                    <p>By Ronald A. Heifetz and Donald L. Laurie</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$8.95</span><span><a href="#"><span>View Details</a></span></div><!--i don't know how to span this correctly-->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/160w/products/23769/88059/generic-article__32475.1565370641.png?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>HBR ONPOINT ARTICLE</p>
+                    <h4>Demand Better Results - and Get Them (HBR OnPoint Enhanced Edition)</h4>
+                    <p>By Robert H. Schaffer</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$8.95</span><span><a href="#"><span>View Details</a></span></div>
                 </div>
             </div>
         </div>
+    </div><!---endofrelatedproducts-->
+    <div id="related-products">
+        <div id="related-products-header">
+            <h3>Customer also bought</h3>
+        </div>
+        <div id="related-products-container">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/320w/products/14750/108958/SEPT15_03_56131566-383x215__45999.1565392958.jpg?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>HBR ARTICLE</p>
+                    <h4>What makes a Leader? (HBR Bestseller)</h4>
+                    <p>By Daniel Goleman</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$8.95</span><span><a href="#"><span>View Details</a></span></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/80w/products/16441/154478/10102_500__24242.1599812088.png?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>PRESS BOOK</p>
+                    <h4>Leadership That Gets Result (Harvard Business Review Classics)</h4>
+                    <p>By Daniel Goleman</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$9.99</span><span><a href="#"><span>View Details</a></span></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/images/stencil/320w/products/9307/74648/SEPT15_03_490795033_t-383x215__36179.1565361797.jpg?c=2" alt="">
+                </div>
+                <div class="card-body">
+                    <p>HBR ARTICLE</p>
+                    <h4>What is The Strategy? (HBR Bestseller)</h4>
+                    <p>By Michael E. Porter</p>
+                </div>
+                <div class="card-footer">
+                    <div id="spanner"><span>$8.95</span><span><a href="#"><span>View Details</a></span></div>
+                </div>
+            </div>
+        </div><!---end of customer also bought-->
+        <div id="footer">
+            <div id="footercontainer">
+                <div id="footer-header">
+                    <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/90abe5c0-eed6-0138-8ad3-0242ac11000e/e/33777490-bd12-0137-07b1-0242ac110005/img/hbr_logo_black.svg" alt="">
+                </div>
+                <div id="footer-content">
+                    <div class="footer-list">
+                        <ul>
+                            <li><h3>HBR Store</h3></li>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">Books</a></li>
+                            <li><a href="#">Tools</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Articles</a></li>
+                            <li><a href="#">Magazine Issues</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list">
+                        <ul>
+                            <li><h3>HBR Series</h3></li>
+                            <li><a href="#">HBR 10 Must-Read Series</a></li>
+                            <li><a href="#">HBR 20-Minute Manager Series</a></li>
+                            <li><a href="#">HBR Emotional Intelligence Series</a></li>
+                            <li><a href="#">HBR Guide Series</a></li>
+                            <li><a href="#">HBR Insights Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list">
+                        <ul>
+                            <li><h3>Search by Subject</h3></li>
+                            <li><a href="#">Communtications</a></li>
+                            <li><a href="#">Entreperneurship</a></li>
+                            <li><a href="#">Finance & Accounting</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">International Business</a></li>
+                            <li><a href="#">Leadership & Managing people</a></li>
+                            <li><a href="#">Managing Organizations</a></li>
+                            <li><a href="#">Managing Yourself</a></li>
+                            <li><a href="#">Operations</a></li>
+                            <li><a href="#">Sales & Marketing</a></li>
+                            <li><a href="#">Strategy</a></li>
+                            <li><a href="#">Technology</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list">
+                        <ul>
+                            <li><h3>My Account</h3></li>
+                            <li><a href="#">My Library</a></li>
+                            <li><a href="#">Orders</a></li>
+                            <li><a href="#">Account Setttings</a></li>
+                            <li><a href="#">Email Prefences</a></li>
+                            <li><a href="#">Sign In</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list">
+                        <ul>
+                            <li><h3>Contact Us</h3></li>
+                            <li>U.S. Canada: 800.988.0886</li>
+                            <li>Email:</li>
+                            <li>customerservice@harvardbusiness.org</li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Returns Policy</a></li>
+                            <li><a href="#">HBR Press</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="footer-copyright">
+                    <div id="copyright-header">
+                        <img src="https://cdn11.bigcommerce.com/s-yneuaokjib/stencil/90abe5c0-eed6-0138-8ad3-0242ac11000e/e/33777490-bd12-0137-07b1-0242ac110005/img/custom/hbr-logo-footer.png" alt="" width="100px">
+                    </div>
+                    <div id="copyright-content">
+                        <div>
+                            <span><a href="#">Privacy Policy</a> | <a href="#">Copyright Information</a></span>
+                        </div>
+                        <div>
+                            <span>Harvard Business Publishing: <a href="#">Higher Educations</a> | <a href="#">Corporate Learning</a> | <a href="#">Harvard Business Review</a> | <a href="#">Harvard Business School.</a></span>
+                        </div>
+                        <div>
+                            <span>Copyright &copy; 2020 Harvard Business School Publishing. All rights reserved. Harvard Business Publishing is an affiliate of Harvard Business School.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
     </div>
 </body>
 </html>
